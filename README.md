@@ -41,3 +41,8 @@ The network was designed to support **100 employees distributed across five floo
 - Institution: ENSET Mohammedia  
 - Duration: 2 weeks  
 - Type: Academic / Practical Project
+- 
+## Network Architecture Diagram
+
+![Enterprise Network Architecture](images/network-architecture.png)
+
