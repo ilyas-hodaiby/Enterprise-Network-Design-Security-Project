@@ -44,4 +44,4 @@ The network was designed to support **100 employees distributed across five floo
 
 ## 📸 Network Topology
 
-![Network Topology](network-topology.png)
+![Network Topology](network-topology.png.jpeg)
