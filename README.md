@@ -46,11 +46,15 @@ The network was designed to support **100 employees distributed across five floo
 
 ![Network Topology](network-topology.png.jpeg)
 
-## ⚙️ Configuration Examples
-
 ### OSPF Configuration (Core Router)
 
 ```bash
 router ospf 1
  network 192.168.10.0 0.0.0.255 area 0
  network 192.168.20.0 0.0.0.255 area 0
+
+### ACL Configuration
+
+```bash
+access-list 100 deny ip 192.168.10.0 0.0.0.255 192.168.20.0 0.0.0.255
+access-list 100 permit ip any any
