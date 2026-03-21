@@ -1,5 +1,7 @@
 # Enterprise Network Design & Security Project
 
+A simulated enterprise network project demonstrating design, routing, and security implementation.
+
 ## Project Overview
 This project was completed as part of an academic program at ENSET University. It focuses on the design, implementation, and simulation of a secure enterprise network for a medium-sized organization.
 
