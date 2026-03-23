@@ -6,6 +6,7 @@ A simulated enterprise network project demonstrating design, routing, and securi
 This project was completed as part of an academic program at ENSET University. It focuses on the design, implementation, and simulation of a secure enterprise network for a medium-sized organization.
 
 The network was designed to support **100 employees distributed across five floors**, ensuring scalability, availability, and security.
+
 ## 🧠 Design Approach
 
 - The network is segmented using VLANs based on departments
