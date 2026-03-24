@@ -63,8 +63,9 @@ The network was designed to support **100 employees distributed across five floo
 
 ## ⚙️ Configuration Examples
 
-### OSPF & ACL Configuration (Core Router)
+### OSPF, ACL & VLAN Configuration (Core Router / Switch)
 
+```bash
 ! ===== OSPF =====
 router ospf 1
  network 192.168.10.0 0.0.0.255 area 0
