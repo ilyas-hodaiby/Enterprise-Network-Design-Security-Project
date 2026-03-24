@@ -65,12 +65,21 @@ The network was designed to support **100 employees distributed across five floo
 
 ### OSPF & ACL Configuration (Core Router)
 
-```bash
+! ===== OSPF =====
 router ospf 1
  network 192.168.10.0 0.0.0.255 area 0
  network 192.168.20.0 0.0.0.255 area 0
 
-! ACL Configuration
+! ===== ACL =====
 access-list 100 deny ip 192.168.10.0 0.0.0.255 192.168.20.0 0.0.0.255
 access-list 100 permit ip any any
 
+! ===== VLAN =====
+vlan 10
+ name IT
+
+vlan 20
+ name HR
+
+vlan 30
+ name Finance
