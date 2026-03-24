@@ -63,19 +63,25 @@ The network was designed to support **100 employees distributed across five floo
 
 ## ⚙️ Configuration Examples
 
-### OSPF, ACL & VLAN Configuration (Core Router / Switch)
+### OSPF, ACL & VLAN Configuration (Core Devices)
 
 ```bash
 ! ===== OSPF =====
+! Dynamic routing configuration
+
 router ospf 1
  network 192.168.10.0 0.0.0.255 area 0
  network 192.168.20.0 0.0.0.255 area 0
 
 ! ===== ACL =====
+! Traffic filtering between departments
+
 access-list 100 deny ip 192.168.10.0 0.0.0.255 192.168.20.0 0.0.0.255
 access-list 100 permit ip any any
 
 ! ===== VLAN =====
+! Network segmentation
+
 vlan 10
  name IT
 
