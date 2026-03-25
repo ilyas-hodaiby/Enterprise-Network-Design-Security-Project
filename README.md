@@ -120,3 +120,18 @@ interface GigabitEthernet0/1
  ip nat outside
 
 ip nat inside source list 1 interface GigabitEthernet0/1 overload
+
+! ===== TRUNKING =====
+! Enable trunk link between switches
+
+interface GigabitEthernet0/1
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20,30
+
+! ===== HSRP =====
+! Gateway redundancy configuration
+
+interface GigabitEthernet0/0
+ standby 1 ip 192.168.10.254
+ standby 1 priority 110
+ standby 1 preempt
