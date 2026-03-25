@@ -106,3 +106,17 @@ ip dhcp pool VLAN20
  network 192.168.20.0 255.255.255.0
  default-router 192.168.20.1
  dns-server 8.8.8.8
+
+! ===== NAT / PAT =====
+! Internet access for internal networks using Port Address Translation
+
+access-list 1 permit 192.168.10.0 0.0.0.255
+access-list 1 permit 192.168.20.0 0.0.0.255
+
+interface GigabitEthernet0/0
+ ip nat inside
+
+interface GigabitEthernet0/1
+ ip nat outside
+
+ip nat inside source list 1 interface GigabitEthernet0/1 overload
