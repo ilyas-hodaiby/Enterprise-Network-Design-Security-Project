@@ -357,7 +357,7 @@ Enterprise-Network-Design-Security-Project/
 
 ## 📸 Network Topology
 
-![Network Topology](network-topology.png)
+network-topology.png.jpeg
 
 ---
 
