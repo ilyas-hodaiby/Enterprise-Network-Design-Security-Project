@@ -40,8 +40,11 @@ The network supports **100 employees across 5 floors**, with each floor having i
             (VLAN per department, trunk uplinks)
 ```
 
-**Full topology diagram:** [`network-topology.png`](network-topology.png)
+---
 
+## 📸 Network Topology
+
+![Network Topology](network-topology.png.jpeg)
 ---
 
 ## 🧠 Design Decisions — Why I Made Each Choice
@@ -352,13 +355,6 @@ Enterprise-Network-Design-Security-Project/
 └── simulation/
     └── enterprise-network.pkt       ← Cisco Packet Tracer simulation file
 ```
-
----
-
-## 📸 Network Topology
-
-![Network Topology](network-topology.png.jpeg)
-
 ---
 
 ## 🧪 Testing & Validation
