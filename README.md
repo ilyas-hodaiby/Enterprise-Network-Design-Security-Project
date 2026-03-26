@@ -58,7 +58,7 @@ Each department is isolated in its own VLAN. This limits broadcast domains, impr
 | VLAN | Department | Subnet | Purpose |
 |---|---|---|---|
 | VLAN 10 | IT | 192.168.10.0/24 | Admin, servers, infrastructure |
-| VLAN 20 | HR | 192.168.20.0/24 | HR systems — restricted from Finance |
+| VLAN 20 | Marketing | 192.168.20.0/24 | Marketing systems — restricted from Finance |
 | VLAN 30 | Finance | 192.168.30.0/24 | Sensitive — isolated from HR and general staff |
 | VLAN 40 | Management | 192.168.40.0/24 | Executive floor |
 | VLAN 50 | Guest / WiFi | 192.168.50.0/24 | Internet only — no internal access |
