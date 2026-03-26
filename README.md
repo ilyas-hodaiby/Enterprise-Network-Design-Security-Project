@@ -40,7 +40,7 @@ The network supports **100 employees across 5 floors**, with each floor having i
             (VLAN per department, trunk uplinks)
 ```
 
-**Full topology diagram:** See [`docs/topology.md`](docs/topology.md) and [`network-topology.png`](network-topology.png)
+**Full topology diagram:** [`network-topology.png`](network-topology.png)
 
 ---
 
