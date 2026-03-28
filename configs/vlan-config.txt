@@ -1,1 +1,33 @@
+! ===== VLAN Configuration =====
+! Department segmentation
 
+vlan 10
+ name IT
+vlan 20
+ name Marketing
+vlan 30
+ name Finance
+vlan 40
+ name Management
+vlan 50
+ name Guest
+
+! ===== Trunking =====
+interface GigabitEthernet0/1
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20,30,40,50
+ switchport nonegotiate
+
+! ===== Access Ports =====
+interface range FastEthernet0/1 - 20
+ switchport mode access
+ switchport access vlan 10
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+
+! ===== Port Security =====
+interface range FastEthernet0/1 - 20
+ switchport port-security
+ switchport port-security maximum 2
+ switchport port-security violation shutdown
+ switchport port-security mac-address sticky
