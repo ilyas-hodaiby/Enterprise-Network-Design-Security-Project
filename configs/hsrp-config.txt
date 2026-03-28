@@ -1,0 +1,32 @@
+! ===== HSRP Configuration =====
+! Active Switch (Priority 110)
+interface Vlan10
+ ip address 192.168.10.1 255.255.255.0
+ standby 10 ip 192.168.10.254
+ standby 10 priority 110
+ standby 10 preempt
+
+interface Vlan20
+ ip address 192.168.20.1 255.255.255.0
+ standby 20 ip 192.168.20.254
+ standby 20 priority 110
+ standby 20 preempt
+
+interface Vlan30
+ ip address 192.168.30.1 255.255.255.0
+ standby 30 ip 192.168.30.254
+ standby 30 priority 110
+ standby 30 preempt
+
+! Standby Switch (Priority 100)
+interface Vlan10
+ ip address 192.168.10.2 255.255.255.0
+ standby 10 ip 192.168.10.254
+ standby 10 priority 100
+ standby 10 preempt
+
+interface Vlan20
+ ip address 192.168.20.2 255.255.255.0
+ standby 20 ip 192.168.20.254
+ standby 20 priority 100
+ standby 20 preempt
