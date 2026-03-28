@@ -1,1 +1,42 @@
+! ===== DHCP Configuration =====
+! Exclude static device IPs
+ip dhcp excluded-address 192.168.10.1 192.168.10.20
+ip dhcp excluded-address 192.168.20.1 192.168.20.10
+ip dhcp excluded-address 192.168.30.1 192.168.30.10
+ip dhcp excluded-address 192.168.40.1 192.168.40.5
+ip dhcp excluded-address 192.168.50.1 192.168.50.5
 
+! IT Department Pool
+ip dhcp pool VLAN10-IT
+ network 192.168.10.0 255.255.255.0
+ default-router 192.168.10.254
+ dns-server 8.8.8.8
+ lease 1
+
+! Marketing Department Pool
+ip dhcp pool VLAN20-Marketing
+ network 192.168.20.0 255.255.255.0
+ default-router 192.168.20.254
+ dns-server 8.8.8.8
+ lease 1
+
+! Finance Department Pool
+ip dhcp pool VLAN30-Finance
+ network 192.168.30.0 255.255.255.0
+ default-router 192.168.30.254
+ dns-server 8.8.8.8
+ lease 1
+
+! Management Pool
+ip dhcp pool VLAN40-Management
+ network 192.168.40.0 255.255.255.224
+ default-router 192.168.40.30
+ dns-server 8.8.8.8
+ lease 1
+
+! Guest WiFi Pool
+ip dhcp pool VLAN50-Guest
+ network 192.168.50.0 255.255.255.128
+ default-router 192.168.50.126
+ dns-server 8.8.8.8
+ lease 0 4
