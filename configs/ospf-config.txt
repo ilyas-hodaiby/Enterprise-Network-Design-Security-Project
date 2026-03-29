@@ -1,4 +1,39 @@
-router ospf 1
- network 192.168.10.0 0.0.0.255 area 0
- network 192.168.20.0 0.0.0.255 area 0
- network 192.168.30.0 0.0.0.255 area 0
+! ===== ACL Configuration =====
+! Traffic filtering between departments
+! Principle of least privilege applied
+
+! Block HR from reaching Finance
+access-list 110 deny   ip 192.168.20.0 0.0.0.255 192.168.30.0 0.0.0.255
+
+! Block Finance from reaching HR
+access-list 110 deny   ip 192.168.30.0 0.0.0.255 192.168.20.0 0.0.0.255
+
+! Block Guest from all internal subnets
+access-list 110 deny   ip 192.168.50.0 0.0.0.127 192.168.0.0 0.0.255.255
+
+! Allow IT to reach everything
+access-list 110 permit ip 192.168.10.0 0.0.0.255 any
+
+! Allow everything else
+access-list 110 permit ip any any
+
+! Apply to VLAN interfaces inbound
+interface Vlan20
+ ip access-group 110 in
+
+interface Vlan30
+ ip access-group 110 in
+
+interface Vlan50
+ ip access-group 110 in
+
+! ===== Management Access ACL =====
+! Only Management VLAN can SSH to devices
+access-list 99 permit 192.168.40.0 0.0.0.31
+access-list 99 deny   any
+
+line vty 0 4
+ access-class 99 in
+ transport input ssh
+ login local
+ exec-timeout 10 0
