@@ -1,39 +1,29 @@
-! ===== ACL Configuration =====
-! Traffic filtering between departments
-! Principle of least privilege applied
+! ===== OSPF Configuration =====
+! Dynamic routing across all floors
+! All subnets in Area 0 (backbone)
 
-! Block HR from reaching Finance
-access-list 110 deny   ip 192.168.20.0 0.0.0.255 192.168.30.0 0.0.0.255
+router ospf 1
+ router-id 2.2.2.2
 
-! Block Finance from reaching HR
-access-list 110 deny   ip 192.168.30.0 0.0.0.255 192.168.20.0 0.0.0.255
+ ! Advertise all department subnets
+ network 192.168.10.0 0.0.0.255 area 0
+ network 192.168.20.0 0.0.0.255 area 0
+ network 192.168.30.0 0.0.0.255 area 0
+ network 192.168.40.0 0.0.0.31 area 0
+ network 192.168.50.0 0.0.0.127 area 0
 
-! Block Guest from all internal subnets
-access-list 110 deny   ip 192.168.50.0 0.0.0.127 192.168.0.0 0.0.255.255
+ ! Uplink to edge router
+ network 10.0.0.0 0.0.0.3 area 0
 
-! Allow IT to reach everything
-access-list 110 permit ip 192.168.10.0 0.0.0.255 any
+ ! Stop OSPF hello packets on user-facing ports
+ ! Prevents OSPF manipulation from end devices
+ passive-interface default
+ no passive-interface GigabitEthernet0/0
 
-! Allow everything else
-access-list 110 permit ip any any
+ ! Advertise default route to all OSPF neighbours
+ default-information originate
 
-! Apply to VLAN interfaces inbound
-interface Vlan20
- ip access-group 110 in
-
-interface Vlan30
- ip access-group 110 in
-
-interface Vlan50
- ip access-group 110 in
-
-! ===== Management Access ACL =====
-! Only Management VLAN can SSH to devices
-access-list 99 permit 192.168.40.0 0.0.0.31
-access-list 99 deny   any
-
-line vty 0 4
- access-class 99 in
- transport input ssh
- login local
- exec-timeout 10 0
+! ===== OSPF Verification Commands =====
+! show ip ospf neighbor
+! show ip route ospf
+! show ip ospf interface
