@@ -376,6 +376,21 @@ Each feature was validated in Packet Tracer simulation mode:
 
 ---
 
+## Testing & Validation
+
+| Test | Method | Result |
+|---|---|---|
+| Inter-VLAN routing | Ping between VLANs | ✅ Pass |
+| ACL enforcement | Ping HR to Finance | ✅ Blocked |
+| HSRP failover | Shutdown active switch | ✅ Failover under 10s |
+| DHCP assignment | Connect new PC | ✅ Pass |
+| NAT/PAT | Ping 8.8.8.8 | ✅ Pass |
+| Port security | Connect 3rd device | ✅ Port shutdown |
+| SSH from VLAN 40 | SSH to core switch | ✅ Pass |
+| SSH from VLAN 20 | SSH blocked by ACL | ✅ Blocked |
+
+---
+
 ## 👤 About
 
 **Ilyas Hodaiby** — MSc Computer Science, Ulster University London  
