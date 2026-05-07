@@ -1,12 +1,12 @@
 # 🏢 Enterprise Network Design & Security Project
 
-> **Built by Ilyas Hodaiby** — A fully simulated secure enterprise network for a 100-user, five-floor organisation. Designed and implemented in Cisco Packet Tracer with a focus on segmentation, redundancy, security, and scalability.
+> A fully simulated secure enterprise network for a 100-user, five-floor organisation. Designed and implemented in Cisco Packet Tracer with a focus on segmentation, redundancy, security, and scalability.
 
 ---
 
 ## 📌 Overview
 
-This project simulates the complete network infrastructure of a medium-sized enterprise — from physical floor layout to routing, switching, security, and internet access. Every design decision was made with real-world constraints in mind: department isolation, fault tolerance, efficient IP allocation, and secure traffic control.
+This project simulates the complete network infrastructure of a medium-sized enterprise from physical floor layout to routing, switching, security, and internet access. Every design decision was made with real-world constraints in mind: department isolation, fault tolerance, efficient IP allocation, and secure traffic control.
 
 The network supports **100 employees across 5 floors**, with each floor having its own technical room, wired and wireless connectivity, and dedicated VLAN segmentation per department.
 
